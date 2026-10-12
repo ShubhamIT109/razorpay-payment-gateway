@@ -1,15 +1,20 @@
 package com.shubham.razorpay.operations.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.UUID;
 
 @Entity
 @Table(name = "settlement_payment")
+@Getter
+@Setter
+@NoArgsConstructor
 public class SettlementPayment {
     @EmbeddedId
      private SettlementPaymentId id;
-    @MapsId()
+    @MapsId("settlementId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "settlement_id", nullable = false)
     private Settlement settlement;
