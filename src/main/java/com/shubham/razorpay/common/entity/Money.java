@@ -2,17 +2,19 @@ package com.shubham.razorpay.common.entity;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Primary;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Embeddable
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Money {
     private int amountUnits;
     private String currency;
 
-    private Money(int amountUnits, String currency){
-        this.amountUnits = amountUnits;
-        this.currency = currency;
-    }
     public static Money of(int amountUnits, String currency){
         return new Money(amountUnits, currency);
     }
