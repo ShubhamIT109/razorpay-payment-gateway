@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SettlementPayment{
+public class SettlementPayment extends BaseEntity{
     @EmbeddedId
      private SettlementPaymentId id;
     @MapsId("settlementId")

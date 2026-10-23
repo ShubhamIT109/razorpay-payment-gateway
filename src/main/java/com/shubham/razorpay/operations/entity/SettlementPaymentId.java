@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class SettlementPaymentId extends BaseEntity {
+public class SettlementPaymentId {
     private UUID settlementId;
     private UUID paymentId;
 
