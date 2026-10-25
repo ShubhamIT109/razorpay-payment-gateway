@@ -1,6 +1,7 @@
 package com.shubham.razorpay.payment.entity;
 
 import com.shubham.razorpay.common.entity.BaseEntity;
+import com.shubham.razorpay.common.enums.PaymentActor;
 import com.shubham.razorpay.common.enums.PaymentEvent;
 import com.shubham.razorpay.common.enums.PaymentStatus;
 import jakarta.persistence.*;
@@ -39,7 +40,7 @@ public class PaymentTransitionLog extends BaseEntity {
     private PaymentStatus toStatus;
 
     @Column(name = "actor", length = 100)
-    private String actor;
+    private PaymentActor actor;
 
     @Column(name = "occured_at",nullable = false)
     private LocalDateTime occuredAt;
